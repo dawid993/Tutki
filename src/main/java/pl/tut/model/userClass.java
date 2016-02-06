@@ -24,8 +24,8 @@ public class userClass implements Serializable {
     private String haslo;
     @Column(name="imie",nullable=false,length=100) 
     private String imie;
-    @Column(name="data_ur",nullable=false,length=100) 
-    private Date data_ur;
+  //  @Column(name="data_ur",nullable=false,length=100) 
+ //   private Date data_ur;
     @Column(name="plec",nullable=false,length=100) 
     private String plec; //MAN / WOMAN
     @Column(name="email",nullable=false,length=100) 
@@ -40,11 +40,11 @@ public class userClass implements Serializable {
         this.haslo = haslo;
     }
 
-    public userClass(String login, String haslo, String imie, Date data_ur, String plec, String email) {
+    public userClass(String login, String haslo, String imie, String plec, String email) {
         this.login = login;
         this.haslo = haslo;
         this.imie = imie;
-        this.data_ur = data_ur;
+      //  this.data_ur = data_ur;
         this.plec = plec;
         this.email = email;
     }
@@ -73,13 +73,13 @@ public class userClass implements Serializable {
         this.imie = imie;
     }
 
-    public Date getData_ur() {
+ /*   public Date getData_ur() {
         return data_ur;
     }
 
     public void setData_ur(Date data_ur) {
         this.data_ur = data_ur;
-    }
+    }*/
 
     public String getPlec() {
         return plec;

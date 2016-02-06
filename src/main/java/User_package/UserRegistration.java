@@ -4,6 +4,7 @@ package User_package;
 import pl.tut.model.userClass;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -25,6 +26,7 @@ public class UserRegistration {
     private userClass UserTmp = new userClass();
     private ArrayList<String> listaPlec = null;
     private userClass tmp_user = new userClass();
+    private Date data;
     
     public UserRegistration() {
         
@@ -38,13 +40,13 @@ public class UserRegistration {
     
     public void addUser(){      
             userList.put(tmp_user.getLogin(), new userClass(tmp_user.getLogin(), tmp_user.getHaslo(), tmp_user.getImie(),
-                                                       tmp_user.getData_ur(), tmp_user.getPlec(), tmp_user.getEmail()));     
+                                                        tmp_user.getPlec(), tmp_user.getEmail()));     
     }
     
     public void rejestracja(){
     	
     	UserDAOImp dao = new UserDAOImp();
-        dao.save(UserTmp);
+        dao.save(new userClass());
 
     }
     
@@ -72,5 +74,15 @@ public class UserRegistration {
     public void setTmp_user(userClass tmp_user) {
         this.tmp_user = tmp_user;
     } 
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+    
+    
     
 }
