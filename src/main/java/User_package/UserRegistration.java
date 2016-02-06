@@ -44,9 +44,11 @@ public class UserRegistration {
     }
     
     public void rejestracja(){
-    	
+    	System.out.println("sda");
     	UserDAOImp dao = new UserDAOImp();
-        dao.save(new userClass());
+    	UserTmp.setLogin("davixon");
+    	System.out.println(UserTmp);
+        dao.save(UserTmp);
 
     }
     
