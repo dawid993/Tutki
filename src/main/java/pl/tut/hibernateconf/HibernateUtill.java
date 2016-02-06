@@ -16,8 +16,7 @@ public class HibernateUtill {
         try {
             SessionFactory factory = null;
             if (sessionFactory == null) {
-                Configuration configuration = new Configuration().configure(HibernateUtill.class
-                        .getResource("hibernate.conf.xml"));
+                Configuration configuration = new Configuration().configure(HibernateUtill.class.getResource("hibernate.conf.xml"));
                 configuration.addAnnotatedClass(Lesson.class);
                 configuration.addAnnotatedClass(Tutorial.class);
                 StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder();

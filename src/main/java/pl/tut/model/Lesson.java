@@ -15,9 +15,9 @@ import org.hibernate.annotations.Type;
 @Table(name="lessons")
 public class Lesson implements Serializable {    
     
-	@Id
+    @Id
     @Column(name="id")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     
     @Column(name="lesson_name",length=100,nullable = false)

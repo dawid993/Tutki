@@ -1,26 +1,46 @@
-package User_package;
+package pl.tut.model;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
-public class User {
+@Entity
+@Table(name="user")
+public class user implements Serializable {
     
-    private String login, haslo;
+    @Id
+    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private int id;  
+    
+    @Column(name="login",nullable=false,length=100)
+    private String login;
+    @Column(name="haslo",nullable=false,length=100) 
+    private String haslo;
+    @Column(name="imie",nullable=false,length=100) 
     private String imie;
+    @Column(name="data_ur",nullable=false,length=100) 
     private Date data_ur;
+    @Column(name="plec",nullable=false,length=100) 
     private String plec; //MAN / WOMAN
+    @Column(name="email",nullable=false,length=100) 
     private String email;
 
-    public User() {
+    public user() {
         
     } 
     
-    public User(String login, String haslo){
+    public user(String login, String haslo){
         this.login = login;
         this.haslo = haslo;
     }
 
-    public User(String login, String haslo, String imie, Date data_ur, String plec, String email) {
+    public user(String login, String haslo, String imie, Date data_ur, String plec, String email) {
         this.login = login;
         this.haslo = haslo;
         this.imie = imie;
