@@ -13,6 +13,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import pl.tut.dao.TutorialDAOImp;
+import pl.tut.dao.UserDAOImp;
 import pl.tut.model.Lesson;
 import pl.tut.model.Tutorial;
 
@@ -40,10 +41,10 @@ public class UserRegistration {
                                                        tmp_user.getData_ur(), tmp_user.getPlec(), tmp_user.getEmail()));     
     }
     
-    public void Rejestracja(){
+    public void rejestracja(){
     	
-    	TutorialDAOImp dao = new TutorialDAOImp();
-        dao.saveUser(UserTmp);
+    	UserDAOImp dao = new UserDAOImp();
+        dao.save(UserTmp);
 
     }
     

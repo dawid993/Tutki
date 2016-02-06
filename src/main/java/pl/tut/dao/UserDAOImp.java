@@ -4,27 +4,26 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import pl.tut.hibernateconf.HibernateUtill;
-import pl.tut.model.Tutorial;
 import pl.tut.model.userClass;
 
-public class TutorialDAOImp {
+public class UserDAOImp {
 
 	private SessionFactory sessionFactory;
 
-	public TutorialDAOImp() {
+	public UserDAOImp() {
 		sessionFactory = HibernateUtill.getSessionFactory();
 	}
 
-	public void save(Tutorial tutorial) {
+        public void save(userClass u) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.getTransaction();
 
 		try {
 			trans.begin();
-			if (tutorial.getId() == 0)
-				session.persist(tutorial);
+			if (u.getId() == 0)
+				session.persist(u);
 			else
-				session.merge(tutorial);
+				session.merge(u);
 			trans.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -33,16 +32,16 @@ public class TutorialDAOImp {
 			session.close();
 		}
 	}
-
-	public Tutorial getTutorial(int id) {
+        
+       	public userClass getUserClass(int id) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.getTransaction();
 		
 		try {
 			trans.begin();
-			Tutorial tut = session.get(Tutorial.class, id);			
+			userClass u = session.get(userClass.class, id);			
 			trans.commit();
-			return tut;
+			return u;
 		} catch (Exception e) {
 			e.printStackTrace();
 			trans.rollback();
@@ -50,6 +49,6 @@ public class TutorialDAOImp {
 			session.close();
 		}
 		return null;
-	}
-            
+	} 
+        
 }

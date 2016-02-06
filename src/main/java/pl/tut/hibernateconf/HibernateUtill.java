@@ -7,6 +7,7 @@ import org.hibernate.service.ServiceRegistry;
 
 import pl.tut.model.Lesson;
 import pl.tut.model.Tutorial;
+import pl.tut.model.userClass;
 
 public class HibernateUtill {
 
@@ -19,6 +20,10 @@ public class HibernateUtill {
                 Configuration configuration = new Configuration().configure(HibernateUtill.class.getResource("hibernate.conf.xml"));
                 configuration.addAnnotatedClass(Lesson.class);
                 configuration.addAnnotatedClass(Tutorial.class);
+                configuration.addAnnotatedClass(userClass.class);
+                //
+                
+                
                 StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder();
                 serviceRegistryBuilder.applySettings(configuration.getProperties());
                 ServiceRegistry serviceRegistry = serviceRegistryBuilder.build();
