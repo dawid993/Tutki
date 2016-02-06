@@ -104,6 +104,12 @@ public class userClass implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+	@Override
+	public String toString() {
+		return "userClass [id=" + id + ", login=" + login + ", haslo=" + haslo + ", imie=" + imie + ", plec=" + plec
+				+ ", email=" + email + "]";
+	}
     
     
 }
