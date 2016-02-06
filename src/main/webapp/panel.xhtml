@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:form  id="navigationForm">
+        
+            <style type="text/css">
+                
+                /*.ui-button .ui-button-text-only*/
+                .buttonStyle  {
+                 
+                    /*width: 22vh !important;*/
+                    height: 33px !important;
+                    font-size: 10.5px !important;
+                    text-shadow: 0 0 3px #ff6600, 0 0 5px #ff6600;
+                }
+                .buttonStyle:hover {
+                    background: #ffffff !important;
+                   /*  width: 22vh !important;*/
+                    height: 33px !important;
+                    color: #333333 !important;
+                    font-size: 10.5px !important;
+                }
+                .buttonStyle:active {
+                    background: #ff3333 !important;
+                  /*   width: 22vh !important;*/
+                    height: 33px !important;
+                    color: #333333 !important;
+                    font-size: 10.5px !important;
+                }
+                .mainButtons{
+                       
+                        height: 33px!important; 
+                        border-radius: 10px!important; 
+                        border: solid 2px!important;
+                        font-size: 13px!important;
+                    }
+                    .mainButtons:hover{
+                        background: white;
+                        height: 33px!important; 
+                        border-radius: 10px!important; 
+                        border: solid 2px;
+                        font-size: 13px;
+                    }
+                    .mainButtons:active{
+                        background: #999999;
+                        height: 33px!important; 
+                        border-radius: 10px!important; 
+                        border: solid 2px ;
+                        font-size: 13px;
+                    }
+                    .tooltip{
+                        font-size: 13px;
+                    }
+
+            </style>  
+        
+        
+        <h:panelGroup style="width: 80vh; background: url('./resources/images/blackBg/black50.png'); color: black; font-size: 14px;
+                              display: block; border-radius:5px; text-align: left; vertical-align: bottom ; padding-top: 2px; padding-left: 4px">
+                 
+            <h:outputText value="Nie jesteś zalogowany!" rendered="#{!userAccount.loggIn}" style="color: #ffcccc"  />
+        
+            <h:outputText value="Zalogowany jako: " rendered="#{userAccount.loggIn}" style="color: white"  />
+            <h:outputText value="#{userAccount.login}" rendered="#{userAccount.loggIn}" style="color: white"  />
+            
+        </h:panelGroup>
+        
+        <div style="background: url('./resources/images/blackBg/black50.png'); height: 4.3vh; margin-top: 2px; padding-top: 1px" >
+                  
+                    <p:commandButton value="Strona głowna" action="index" ajax="false" class="mainButtons" style="border-color: #009999 !important"  />   
+                    <p:commandButton value="Profil" action="Profil_osobowy" ajax="false" class="mainButtons" style="border-color: #009999 !important" />
+                    <p:commandButton value="Nowy Tutorial" action="NowyTutorial" ajax="false" class="mainButtons" style="border-color: #009999 !important" />
+                    <p:commandButton value="Lista Tutoriali" action="Przypni 
+                                     jSie" ajax="false" class="mainButtons" style="border-color: #009999 !important" />
+                    <p:commandButton id="kategorie" value="Kategorie" class="mainButtons" style="border-color: #009999 !important"/>                    
+                  
+                         <p:overlayPanel id="kat_panel" for="kategorie" showEffect="fade" hideEffect="fade" 
+                                         style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
+                            <h:panelGrid columns="1" >
+                                <p:commandButton id="kat0" value="Programowanie" style="font-size: 13px"/>
+                                <p:commandButton id="kat1" value="Języki Obce" style="font-size: 13px"/>
+                                <p:commandButton id="kat2" value="Sieci Komputerowe" style="font-size: 13px"/>
+                                
+                            </h:panelGrid>
+                        </p:overlayPanel>
+                    
+                       <p:overlayPanel id="kat0_panel" for="kat0" showEffect="fade" hideEffect="fade" 
+                                       style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
+                            <h:panelGrid columns="1" >
+                                <p:commandButton value="C/C++" style="font-size: 13px"/>
+                                <p:commandButton value="Java" style="font-size: 13px"/>
+                                <p:commandButton value="C#" style="font-size: 13px"/>
+                                <p:commandButton value="WEB" style="font-size: 13px"/>
+                                <p:commandButton value="Inne" style="font-size: 13px"/>
+                            </h:panelGrid>
+                        </p:overlayPanel>
+                    
+                       <p:overlayPanel id="kat1_panel" for="kat1" showEffect="fade" hideEffect="fade" 
+                                       style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
+                            <h:panelGrid columns="1" >
+                                <p:commandButton value="Angielski" style="font-size: 13px"/>
+                                <p:commandButton value="Niemiecki" style="font-size: 13px"/>
+                                <p:commandButton value="Włoski" style="font-size: 13px"/>
+                                <p:commandButton value="Hiszpański" style="font-size: 13px"/>
+                            </h:panelGrid>
+                        </p:overlayPanel>                  
+      
+                    <p:commandButton id="szukaj" value="Wyszukaj Tutorial" class="mainButtons" style="border-color: #009999!important "/>  
+                    <p:overlayPanel id="szukaj_Panel" for="szukaj" showEffect="fade" hideEffect="fade" 
+                                    style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px">
+                        
+                            <h:panelGrid columns="2" >
+                                <h:outputText value="Wpisz fraze lub nazwę: " style="font-size: 13px; "/> 
+                                <p:inputText />
+                                <p:commandButton value="Szukaj" style="font-size: 13px"/>
+                            </h:panelGrid>
+                        </p:overlayPanel>
+                    
+                    <p:commandButton id="logowanie" value="LoggIn" class="mainButtons" rendered="#{!userAccount.loggIn}" style="border-color: #009999 !important"/> 
+                   <p:tooltip id="toolTipGrow" for="logowanie" value="login i haslo: admin" showEffect="clip" hideEffect="explode" />
+                    <p:commandButton ajax="false" value="Wylogój się" action="#{userAccount.loggOut()}" rendered="#{userAccount.loggIn}" 
+                                     class="mainButtons" style="border-color: #009999 !important"/>
+
+                        <p:overlayPanel id="log_panel" for="logowanie" showEffect="fade" hideEffect="fade" 
+                                        style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
+                          
+                            <h:panelGrid columns="2" rendered="#{!userAccount.loggIn}" >
+                              <h:outputLabel value="Login: " style="font-size: 13px; "/>
+                              <p:inputText value="#{userAccount.login}" />
+                              <p:outputLabel value=" Hasło: " style="font-size: 13px; " />
+                              <p:password value="#{userAccount.haslo}" />    
+                            </h:panelGrid>
+                            
+                            
+                            <h:panelGrid columns="1" rendered="#{!userAccount.loggIn}">
+                                <p:commandButton action="#{userAccount.logujSie()}"  value="Zaloguj" ajax="false" style="font-size: 13px; width: 15vh; height: 25px;" /><br/>
+                                <p:outputLabel value="Jeżeli nie masz jeszce konta, załóż go." style="font-size: 13px; " />
+                                <p:commandButton  value="Rejestracja" action="Rejestracja" ajax="false" style="font-size: 13px; width: 15vh; height: 25px;" />
+                            </h:panelGrid>
+                            
+                        </p:overlayPanel>
+        </div>
+           
+    </h:form>   
+  
+
+</html>
+

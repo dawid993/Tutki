@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                template="./Dekorator.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <style type="text/css">
+   
+                .panelGridStyle{
+                    background: url('./resources/images/blackBg/black10.png');
+                    border-radius: 8px;
+                    width: 90%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    padding-right: 15%;
+                    padding-left: 15%;
+                    padding-bottom: 35px;
+                    padding-top: 20px;
+                    border: solid 1px #276873;
+                }             
+                .menu .ui-selectonemenu-label {  /*czesc pierwszoplanowa */
+                    font-size: 13px;
+                    height: 20px; 
+                    background: url('./resources/images/blackBg/black5.png'); 
+                    border: solid 1px #599bb3;
+                }
+                .ui-selectonemenu-item.ui-state-highlight {    
+                    background-color: lightcoral;    /* background-color: #ff9900;*/
+                }
+                .ui-selectonemenu-item {
+                    background: url('./resources/images/header_x2.png');   /*tło elementow w select one menu */
+                }
+                .kalendarz .ui-inputfield  {  /*nadpisanie wszytkich inputfield (przez kalendaz) */
+                    background: url('./resources/images/whiteBg/white30.png'); 
+                    width: 40vh;  
+                    border-radius:2px;
+                    border: solid 1px #599bb3;
+                    font-size: 14px;
+                }
+                .inputText{
+                    background: url('./resources/images/whiteBg/white30.png'); 
+                    width: 40vh; 
+                    border-radius:2px;
+                    border: solid 1px #599bb3;
+                    font-size: 14px;
+                }
+                .outputLabel{
+                    background: url('./resources/images/blackBg/black10.png');     
+                    width: 40vh; 
+                    height: 22px;      
+                    display: block; 
+                    border-radius:2px; 
+                    text-align: center; 
+                    padding-top: 5px; 
+                    font-size: 14px;
+                    border: solid 1px #599bb3;
+                }
+                
+        </style>     
+        
+        <div align="center">
+        <h:form>
+            <h1><h:outputText value="  Rejestracja użytkownika:"/></h1>
+            <h:panelGrid columns="2" cellpadding="3px" frame="box" class="panelGridStyle" >
+                 
+                <h:panelGroup class="outputLabel">
+                    
+                    <p:outputLabel value="Imie:" style="font-size: 14px; font-family: monospace "/>
+                    <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
+                </h:panelGroup>
+                <p:inputText id="r_imie" required="true" class="inputText"/>
+     
+              
+                <h:panelGroup class="outputLabel">
+                              
+                    <p:outputLabel value="Email:" style="font-size: 14px; font-family: monospace"/>
+                    <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
+                </h:panelGroup>
+                <p:inputText id="email" required="true" class="inputText"/>
+
+                 <h:panelGroup class="outputLabel">
+                               
+                    <p:outputLabel value="Hasło:" style="font-size: 14px;font-family: monospace"/>
+                    <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
+                </h:panelGroup>
+                <p:password id="r_haslo" required="true"  class="inputText"/>         
+                
+                 <h:panelGroup class="outputLabel">
+                               
+                    <p:outputLabel value="Powtórz hasło:" style="font-size: 14px;font-family: monospace"/>
+                    <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
+                </h:panelGroup>
+                <p:password id="r_haslo2" required="true"  class="inputText"/>   
+                
+             
+                 <h:panelGroup class="outputLabel">           
+                    <p:outputLabel value="Płeć:" style="font-size: 14px; font-family: monospace"/>
+                    <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
+                </h:panelGroup>
+                    
+                <h:selectOneRadio layout="lineDirection" style="font-size: 14px;" >
+                        <f:selectItem itemValue="Kobieta" itemLabel="Kobieta" />
+                        <f:selectItem itemValue="Mężczyzna" itemLabel="Mężczyzna" />
+                 </h:selectOneRadio>
+                
+                 <h:panelGroup class="outputLabel">
+                               
+                    <p:outputLabel value="Data urodzenia:" style="font-size: 14px;font-family: monospace"/>
+                    <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
+                </h:panelGroup>
+                <p:calendar id="mask2"  pattern="dd/MM/yyyy" mask="true" locale="pl" 
+                            size="25"  styleClass="kalendarz">
+                </p:calendar>
+                
+                <p:commandButton ajax="false" value="Rejestracja" style="font-size: 12px; width: 20vh; height: 25px; opacity: 1.0"/>
+ 
+            </h:panelGrid>
+            <br/>
+            
+        </h:form>   
+        </div>
+        <br/>
+       
+           
+    </ui:define>
+
+</ui:composition>
