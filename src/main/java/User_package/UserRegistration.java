@@ -5,11 +5,16 @@ import pl.tut.model.user;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import pl.tut.dao.TutorialDAOImp;
+import pl.tut.model.Lesson;
+import pl.tut.model.Tutorial;
 
 @ManagedBean
 @SessionScoped
@@ -34,6 +39,15 @@ public class UserRegistration {
             userList.put(tmp_user.getLogin(), new user(tmp_user.getLogin(), tmp_user.getHaslo(), tmp_user.getImie(),
                                                        tmp_user.getData_ur(), tmp_user.getPlec(), tmp_user.getEmail()));     
     }
+    
+    public void Rejestracja(){
+    	
+    	TutorialDAOImp dao = new TutorialDAOImp();
+        dao.saveUser(UserTmp);
+
+    }
+    
+    
     public user getUserTmp() {
         return UserTmp;
     }
