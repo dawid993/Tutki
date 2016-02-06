@@ -1,5 +1,6 @@
 package pl.tut.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tutorial")
-public class Tutorial {
+public class Tutorial implements Serializable {
 
 	@Id
 	@Column(name="id")

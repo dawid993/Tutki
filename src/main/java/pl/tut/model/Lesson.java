@@ -1,5 +1,6 @@
 package pl.tut.model;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,7 @@ import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name="lessons")
-public class Lesson{    
+public class Lesson implements Serializable {    
     
 	@Id
     @Column(name="id")
