@@ -6,12 +6,14 @@
 <hibernate-configuration>
 <session-factory>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:5432/tutorials</property>
-    <property name="hibernate.connection.username">tutorial</property>
-    <property name="hibernate.connection.password">passw</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:1527/tutorials</property>
+    <property name="hibernate.connection.username">app</property>
+    <property name="hibernate.connection.password">app</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="show_sql">true</property>
     <property name="hbm2ddl.auto">create</property>
-    <mapping class="pl.tut.model.Lesson" />   
+    <mapping class="pl.tut.model.Lesson" /> 
+    <mapping class="pl.tut.model.Tutorial" /> 
+    <mapping class="pl.tut.model.userClass" />  
 </session-factory>
 </hibernate-configuration>
