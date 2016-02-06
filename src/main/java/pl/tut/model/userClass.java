@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="user")
-public class user implements Serializable {
+public class userClass implements Serializable {
     
     @Id
     @Column(name="id")
@@ -31,16 +31,16 @@ public class user implements Serializable {
     @Column(name="email",nullable=false,length=100) 
     private String email;
 
-    public user() {
+    public userClass() {
         
     } 
     
-    public user(String login, String haslo){
+    public userClass(String login, String haslo){
         this.login = login;
         this.haslo = haslo;
     }
 
-    public user(String login, String haslo, String imie, Date data_ur, String plec, String email) {
+    public userClass(String login, String haslo, String imie, Date data_ur, String plec, String email) {
         this.login = login;
         this.haslo = haslo;
         this.imie = imie;

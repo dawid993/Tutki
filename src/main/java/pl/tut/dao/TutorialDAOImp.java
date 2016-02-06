@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import pl.tut.hibernateconf.HibernateUtill;
 import pl.tut.model.Tutorial;
-import pl.tut.model.user;
+import pl.tut.model.userClass;
 
 public class TutorialDAOImp {
 
@@ -52,7 +52,7 @@ public class TutorialDAOImp {
 		return null;
 	}
         
-        public void saveUser(user u) {
+        public void saveUser(userClass u) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.getTransaction();
 
@@ -71,13 +71,13 @@ public class TutorialDAOImp {
 		}
 	}
         
-       	public user getUser(int id) {
+       	public userClass getUser(int id) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.getTransaction();
 		
 		try {
 			trans.begin();
-			user u = session.get(user.class, id);			
+			userClass u = session.get(userClass.class, id);			
 			trans.commit();
 			return u;
 		} catch (Exception e) {

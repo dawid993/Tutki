@@ -1,7 +1,7 @@
 
 package User_package;
 
-import pl.tut.model.user;
+import pl.tut.model.userClass;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,10 +20,10 @@ import pl.tut.model.Tutorial;
 @SessionScoped
 public class UserRegistration {
     
-    private static final Map<String, user> userList = new HashMap<>();
-    private user UserTmp = new user();
+    private static final Map<String, userClass> userList = new HashMap<>();
+    private userClass UserTmp = new userClass();
     private ArrayList<String> listaPlec = null;
-    private user tmp_user = new user();
+    private userClass tmp_user = new userClass();
     
     public UserRegistration() {
         
@@ -32,11 +32,11 @@ public class UserRegistration {
            "Mężczyzna"
         ));
         
-        userList.put("Admin", new user("admin", "admin"));
+        userList.put("Admin", new userClass("admin", "admin"));
     }
     
     public void addUser(){      
-            userList.put(tmp_user.getLogin(), new user(tmp_user.getLogin(), tmp_user.getHaslo(), tmp_user.getImie(),
+            userList.put(tmp_user.getLogin(), new userClass(tmp_user.getLogin(), tmp_user.getHaslo(), tmp_user.getImie(),
                                                        tmp_user.getData_ur(), tmp_user.getPlec(), tmp_user.getEmail()));     
     }
     
@@ -48,11 +48,11 @@ public class UserRegistration {
     }
     
     
-    public user getUserTmp() {
+    public userClass getUserTmp() {
         return UserTmp;
     }
 
-    public void setUserTmp(user UserTmp) {
+    public void setUserTmp(userClass UserTmp) {
         this.UserTmp = UserTmp;
     }
 
@@ -64,11 +64,11 @@ public class UserRegistration {
         this.listaPlec = listaPlec;
     }
 
-    public user getTmp_user() {
+    public userClass getTmp_user() {
         return tmp_user;
     }
 
-    public void setTmp_user(user tmp_user) {
+    public void setTmp_user(userClass tmp_user) {
         this.tmp_user = tmp_user;
     } 
     

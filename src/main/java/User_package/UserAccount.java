@@ -1,6 +1,6 @@
 package User_package;
 
-import pl.tut.model.user;
+import pl.tut.model.userClass;
 import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -10,7 +10,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class UserAccount {
     
-    private user loggInWho=null;
+    private userClass loggInWho=null;
     private boolean loggIn;
     private String login, haslo;
     
@@ -42,11 +42,11 @@ public class UserAccount {
         this.loggIn = loggIn;
     }
 
-    public user getLoggInWho() {
+    public userClass getLoggInWho() {
         return loggInWho;
     }
 
-    public void setLoggInWho(user loggInWho) {
+    public void setLoggInWho(userClass loggInWho) {
         this.loggInWho = loggInWho;
     }
 
