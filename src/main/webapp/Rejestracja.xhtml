@@ -16,8 +16,8 @@
                     width: 90%;
                     margin-left: 5%;
                     margin-right: 5%;
-                    padding-right: 15%;
-                    padding-left: 15%;
+                    padding-right: 24%;
+                    padding-left: 24%;
                     padding-bottom: 35px;
                     padding-top: 20px;
                     border: solid 1px #276873;
@@ -65,14 +65,14 @@
         <div align="center">
         <h:form>
             <h1><h:outputText value="  Rejestracja użytkownika:"/></h1>
-            <h:panelGrid columns="2" cellpadding="3px" frame="box" class="panelGridStyle" >
+            <h:panelGrid columns="2" cellpadding="3" frame="box" class="panelGridStyle" >
                  
                 <h:panelGroup class="outputLabel">
                     
                     <p:outputLabel value="Imie:" style="font-size: 14px; font-family: monospace "/>
                     <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
                 </h:panelGroup>
-                <p:inputText value="#{userRegistration.userTmp.imie}" id="r_imie" required="true" class="inputText"/>
+                <p:inputText value="#{userController.user.imie}" id="r_imie" required="true" class="inputText"/>
      
               
                 <h:panelGroup class="outputLabel">
@@ -80,21 +80,21 @@
                     <p:outputLabel value="Email:" style="font-size: 14px; font-family: monospace"/>
                     <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
                 </h:panelGroup>
-                <p:inputText value="#{userRegistration.userTmp.email}" id="email" required="true" class="inputText"/>
+                <p:inputText value="#{userController.user.email}" id="email" required="true" class="inputText"/>
 
                  <h:panelGroup class="outputLabel">
                                
                     <p:outputLabel value="Hasło:" style="font-size: 14px;font-family: monospace"/>
                     <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
                 </h:panelGroup>
-                <p:password value="#{userRegistration.userTmp.haslo}"  id="r_haslo" required="true"  class="inputText"/>         
+                <p:password value="#{userController.user.haslo}"  id="r_haslo" required="true"  class="inputText"/>         
                 
                  <h:panelGroup class="outputLabel">
                                
                     <p:outputLabel value="Powtórz hasło:" style="font-size: 14px;font-family: monospace"/>
                     <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
                 </h:panelGroup>
-                <p:password value="#{userRegistration.userTmp.haslo}" id="r_haslo2" required="true"  class="inputText"/>   
+                <p:password value="#{userController.haslo}" id="r_haslo2" required="true"  class="inputText"/>   
                 
              
                  <h:panelGroup class="outputLabel">           
@@ -102,7 +102,7 @@
                     <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
                 </h:panelGroup>
                     
-                <h:selectOneRadio value="#{userRegistration.userTmp.plec}" layout="lineDirection" style="font-size: 14px;" >
+                <h:selectOneRadio value="#{userController.user.plec}" layout="lineDirection" style="font-size: 14px;" >
                         <f:selectItem itemValue="Kobieta" itemLabel="Kobieta" />
                         <f:selectItem itemValue="Mężczyzna" itemLabel="Mężczyzna" />
                  </h:selectOneRadio>
@@ -113,10 +113,10 @@
                     <p:outputLabel value=" * " style="font-size: 16px;color: red;"/>
                 </h:panelGroup>
                 <p:calendar id="mask2"  pattern="dd/MM/yyyy" mask="true" locale="pl" 
-                            size="25" value="#{userRegistration.data}"  styleClass="kalendarz">
+                            size="25" value="#{userController.data}"  styleClass="kalendarz">
                 </p:calendar>
                 
-                <p:commandButton ajax="false" value="Rejestracja" action="#{userRegistration.rejestracja}" style="font-size: 12px; width: 20vh; height: 25px; opacity: 1.0"/>
+                <p:commandButton ajax="false" value="Rejestracja" action="#{userController.rejestracja()}" style="font-size: 12px; width: 20vh; height: 25px; opacity: 1.0"/>
  
             </h:panelGrid>
             <br/>
