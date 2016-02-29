@@ -3,10 +3,13 @@ package pl.tut.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
+
 import pl.tut.hibernateconf.HibernateUtill;
 import pl.tut.model.userClass;
 
-public class UserDAOImp {
+@Repository
+public class UserDAOImp implements UserDAO {
 
 	private SessionFactory sessionFactory;
 
@@ -14,7 +17,7 @@ public class UserDAOImp {
 		sessionFactory = HibernateUtill.getSessionFactory();
 	}
 
-        public void save(userClass u) {
+	public void save(userClass u) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.getTransaction();
 
@@ -32,14 +35,14 @@ public class UserDAOImp {
 			session.close();
 		}
 	}
-        
-       	public userClass getUserClass(int id) {
+
+	public userClass getUserClass(int id) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.getTransaction();
-		
+
 		try {
 			trans.begin();
-			userClass u = session.get(userClass.class, id);			
+			userClass u = session.get(userClass.class, id);
 			trans.commit();
 			return u;
 		} catch (Exception e) {
@@ -49,6 +52,6 @@ public class UserDAOImp {
 			session.close();
 		}
 		return null;
-	} 
-        
+	}
+
 }

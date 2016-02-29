@@ -7,9 +7,19 @@
     <display-name>Servlet 3.0 Web Application</display-name>
 	<display-name>JSF Spring Integration</display-name>
         
+    <listener>
+	    <listener-class>
+	        org.springframework.web.context.ContextLoaderListener
+	    </listener-class>
+	</listener>	
+	<listener>
+   	 	<listener-class>
+        	org.springframework.web.context.request.RequestContextListener
+    	</listener-class>
+	</listener>    
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/config.xml</param-value>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
        
 	<servlet>

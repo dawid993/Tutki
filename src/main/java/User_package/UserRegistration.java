@@ -1,23 +1,22 @@
 
 package User_package;
 
-import pl.tut.model.userClass;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
-import javax.faces.application.FacesMessage;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-import pl.tut.dao.TutorialDAOImp;
-import pl.tut.dao.UserDAOImp;
-import pl.tut.model.Lesson;
-import pl.tut.model.Tutorial;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import pl.tut.dao.UserDAO;
+import pl.tut.model.userClass;
+
+@Component
 @ManagedBean
 @SessionScoped
 public class UserRegistration {
@@ -27,6 +26,9 @@ public class UserRegistration {
     private ArrayList<String> listaPlec = null;
     private userClass tmp_user = new userClass();
     private Date data;
+    
+    @Autowired
+    private UserDAO dao;
     
     public UserRegistration() {
         
@@ -44,10 +46,9 @@ public class UserRegistration {
     }
     
     public void rejestracja(){
-    	System.out.println("sda");
-    	UserDAOImp dao = new UserDAOImp();
+    	System.out.println("sda");    	
     	UserTmp.setLogin("davixon");
-    	System.out.println(UserTmp);
+    	System.out.println(dao);
         dao.save(UserTmp);
 
     }
