@@ -68,14 +68,14 @@
             
         </h:panelGroup>
         
-        <div style="background: url('./resources/images/blackBg/black50.png'); height: 4.3vh; margin-top: 2px; padding-top: 1px" >
+        <div style="background: url('./resources/images/blackBg/black50.png'); height: 4.4vh; margin-top: 2px; padding-top: 1px" >
                   
                     <p:commandButton value="Strona głowna" action="index" ajax="false" class="mainButtons" style="border-color: #009999 !important"  />   
                     <p:commandButton value="Profil" action="Profil_osobowy" ajax="false" class="mainButtons" style="border-color: #009999 !important" />
                     <p:commandButton value="Nowy Tutorial" action="NowyTutorial" ajax="false" class="mainButtons" style="border-color: #009999 !important" />
-                    <p:commandButton value="Lista Tutoriali" action="Przypni 
-                                     jSie" ajax="false" class="mainButtons" style="border-color: #009999 !important" />
-                    <p:commandButton id="kategorie" value="Kategorie" class="mainButtons" style="border-color: #009999 !important"/>                    
+                    <p:commandButton value="Lista Tutoriali" action="TutorialList" ajax="false" class="mainButtons" style="border-color: #009999 !important" />
+                    <p:commandButton id="kategorie" value="Kategorie" class="mainButtons" style="border-color: #009999 !important"/>  
+                     <p:tooltip id="toolTipGrow1" for="kategorie" value="Kategorie kursow" showEffect="clip" hideEffect="explode" />
                   
                          <p:overlayPanel id="kat_panel" for="kategorie" showEffect="fade" hideEffect="fade" 
                                          style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
@@ -83,6 +83,9 @@
                                 <p:commandButton id="kat0" value="Programowanie" style="font-size: 13px"/>
                                 <p:commandButton id="kat1" value="Języki Obce" style="font-size: 13px"/>
                                 <p:commandButton id="kat2" value="Sieci Komputerowe" style="font-size: 13px"/>
+                                <p:commandButton id="kat3" value="Bezbieczeństwo Syst. komp." style="font-size: 13px"/>
+                                <p:commandButton id="kat4" value="Grafika" style="font-size: 13px"/>
+                                <p:commandButton id="kat5" value="Matematyka" style="font-size: 13px"/>
                                 
                             </h:panelGrid>
                         </p:overlayPanel>
@@ -109,6 +112,7 @@
                         </p:overlayPanel>                  
       
                     <p:commandButton id="szukaj" value="Wyszukaj Tutorial" class="mainButtons" style="border-color: #009999!important "/>  
+                    <p:tooltip id="toolTipGrow2" for="szukaj" value="Wyszukiwanie" showEffect="clip" hideEffect="explode" />
                     <p:overlayPanel id="szukaj_Panel" for="szukaj" showEffect="fade" hideEffect="fade" 
                                     style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px">
                         
@@ -120,7 +124,7 @@
                         </p:overlayPanel>
                     
                     <p:commandButton id="logowanie" value="LoggIn" class="mainButtons" rendered="#{!userAccount.loggIn}" style="border-color: #009999 !important"/> 
-                   <p:tooltip id="toolTipGrow" for="logowanie" value="login i haslo: admin" showEffect="clip" hideEffect="explode" />
+                   <p:tooltip id="toolTipGrow3" for="logowanie" value="Logowanie i Rejstracja" showEffect="clip" hideEffect="explode" />
                     <p:commandButton ajax="false" value="Wylogój się" action="#{userAccount.loggOut()}" rendered="#{userAccount.loggIn}" 
                                      class="mainButtons" style="border-color: #009999 !important"/>
 

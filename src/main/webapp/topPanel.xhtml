@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   
+    <h:body>
+    
+      <style type="text/css">
+   
+ .aKat:link, .aKat:visited {
+ 
+  color: #000000;
+  font-size: 14px;
+  font-weight : 600;
+  text-decoration: none;
+  display: block;
+  padding: 4px 10px 4px 10px;
+}
+
+.aKat:link:hover, .aKat:visited:hover  {
+
+  color: #cccccc;
+  font-size: 14px;
+  font-weight : 600;
+  text-decoration : none;
+  display: block;
+  background: #000000;
+  padding: 4px 10px 4px 10px;
+}
+
+      </style>
+        
+        
+        
+        <div id="topTitle" >
+   
+            <p:outputLabel value="Tutotoriale - Projekt Zespołowy" style="color: #cccccc; font-size: 16px; font-weight: 600" />
+            
+        </div>
+        
+        
+        <div style="padding-left: 14px; ">
+            <h:form>  
+                <p:commandLink id="b1" ajax="false" value="Home" action="index.xhtml"  /> 
+                <p:commandLink id="b2" ajax="false" value="Profil" action="index_1.xhtml" />
+                <p:commandLink id="b3" ajax="false" value="Nowy Tutorial" action="NowyTutorial.xhtml" />
+                <p:commandLink id="b4" ajax="false" value="Lista Tutoriali" action="TutorialList.xhtml" />
+                <p:commandLink id="kategorie" value="Kategorie"  /> 
+                <p:tooltip id="toolTipGrow1" for="kategorie" value="Kategorie kursow" showEffect="clip" hideEffect="explode" />
+                  
+                <p:commandLink id="szukaj" value="Wyszukaj"  />
+                <p:tooltip id="toolTipGrow2" for="szukaj" value="Wyszukiwanie" showEffect="clip" hideEffect="explode" />
+                
+                <p:commandLink id="logowanie" value="Logg in" rendered="#{!userAccount.loggIn}" />
+                <p:tooltip id="toolTipGrow3" for="logowanie" value="Logowanie i Rejstracja" showEffect="clip" hideEffect="explode" />
+                <p:commandLink id="b8" ajax="false" action="#{userAccount.loggOut()}" rendered="#{userAccount.loggIn}"  value="Logg out" />
+
+                   
+                
+
+                    <p:overlayPanel id="szukaj_Panel" for="szukaj" showEffect="fade" hideEffect="fade" 
+                                    style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px">
+                        
+                            <h:panelGrid columns="2" >
+                                <h:outputText value="Wpisz fraze lub nazwę: " style="font-size: 13px; "/> 
+                                <p:inputText />
+                                <p:commandButton value="Szukaj" style="font-size: 13px"/>
+                            </h:panelGrid>
+                    </p:overlayPanel>
+                
+
+                         <p:overlayPanel id="kat_panel" for="kategorie" showEffect="fade" hideEffect="fade" 
+                                         style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
+                            <h:panelGrid columns="1" >
+                                <p:commandLink id="kat0" value="Programowanie" style="font-size: 13px " class="aKat"/>
+                                <p:commandLink id="kat1" value="Języki Obce" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink id="kat2" value="Sieci Komputerowe" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink id="kat3" value="Bezbieczeństwo Syst. komp." style="font-size: 13px" class="aKat"/>
+                                <p:commandLink id="kat4" value="Grafika" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink id="kat5" value="Matematyka" style="font-size: 13px" class="aKat"/>
+                                
+                            </h:panelGrid>
+                        </p:overlayPanel>
+                    
+                       <p:overlayPanel id="kat0_panel" for="kat0" showEffect="fade" hideEffect="fade" 
+                                       style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
+                            <h:panelGrid columns="1" >
+                                <p:commandLink value="C/C++" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink value="Java" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink value="C#" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink value="WEB" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink value="Inne" style="font-size: 13px" class="aKat"/>
+                            </h:panelGrid>
+                        </p:overlayPanel>
+                    
+                       <p:overlayPanel id="kat1_panel" for="kat1" showEffect="fade" hideEffect="fade" 
+                                       style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
+                            <h:panelGrid columns="1" >
+                                <p:commandLink value="Angielski" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink value="Niemiecki" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink value="Włoski" style="font-size: 13px" class="aKat"/>
+                                <p:commandLink value="Hiszpański" style="font-size: 13px" class="aKat"/>
+                            </h:panelGrid>
+                        </p:overlayPanel> 
+                
+                    
+            <p:overlayPanel id="log_panel" for="logowanie" showEffect="fade" hideEffect="fade" 
+                                        style="background: url('./resources/images/header_x2.png'); border: solid 2px #666666 ; border-radius: 3px ">
+                          
+                            <h:panelGrid columns="2" rendered="#{!userAccount.loggIn}" >
+                              <h:outputLabel value="Login: " style="font-size: 13px; "/>
+                              <p:inputText value="#{userAccount.login}" />
+                              <p:outputLabel value=" Hasło: " style="font-size: 13px; " />
+                              <p:password value="#{userAccount.haslo}" />    
+                            </h:panelGrid>
+                            
+                            
+                            <h:panelGrid columns="1" rendered="#{!userAccount.loggIn}">
+                                <p:commandLink action="#{userAccount.logujSie()}"  value="Zaloguj" ajax="false" style="font-size: 13px;"  class="aKat" /><br/>
+                                <p:outputLabel value="Jeżeli nie masz jeszce konta, załóż go." style="font-size: 13px; " />
+                                <p:commandLink  value="Rejestracja" action="Rejestracja" ajax="false" style="font-size: 13px; "  class="aKat" />
+                            </h:panelGrid>
+                            
+           </p:overlayPanel>
+                     
+                     
+                     
+            </h:form>      
+        </div>
+
+    </h:body>
+</html>
