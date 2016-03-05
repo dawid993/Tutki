@@ -32,6 +32,6 @@ public class DBTest {
     	System.out.println(tut.getLessons().size());
     	tut.getLessons().add(l);
     	
-    	dao.save(tut);
+    	//dao.save(tut);
     }    
 }

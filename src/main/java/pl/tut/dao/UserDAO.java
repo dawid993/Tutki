@@ -1,9 +1,9 @@
 package pl.tut.dao;
 
-import pl.tut.model.userClass;
+import pl.tut.model.UserPOJO;
 
 public interface UserDAO {
 
-	public void save(userClass u);
-	public userClass getUserClass(int id);
+	public void save(UserPOJO u);
+	public UserPOJO getUserClass(int id);
 }

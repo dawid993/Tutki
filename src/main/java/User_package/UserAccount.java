@@ -1,16 +1,19 @@
 package User_package;
 
-import pl.tut.model.userClass;
-import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import org.springframework.stereotype.Component;
+
+import pl.tut.model.UserPOJO;
 
 
 @ManagedBean
 @SessionScoped
+@Component
 public class UserAccount {
     
-    private userClass loggInWho=null;
+    private UserPOJO loggInWho=null;
     private boolean loggIn;
     private String login, haslo;
     
@@ -42,11 +45,11 @@ public class UserAccount {
         this.loggIn = loggIn;
     }
 
-    public userClass getLoggInWho() {
+    public UserPOJO getLoggInWho() {
         return loggInWho;
     }
 
-    public void setLoggInWho(userClass loggInWho) {
+    public void setLoggInWho(UserPOJO loggInWho) {
         this.loggInWho = loggInWho;
     }
 
