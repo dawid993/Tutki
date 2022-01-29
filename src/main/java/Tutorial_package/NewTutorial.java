@@ -8,11 +8,17 @@ package Tutorial_package;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import pl.tut.dao.UserDAO;
+
 @ManagedBean
 @SessionScoped
 public class NewTutorial {
     
     private Tutorial nowyTutorial;
+    @Autowired
+    private UserDAO userDao;
 
     public NewTutorial() {
         
@@ -24,7 +30,7 @@ public class NewTutorial {
     }
 
     public void setNowyTutorial(Tutorial newTutorial) {
-        this.nowyTutorial = newTutorial;
+        this.nowyTutorial = newTutorial;        
     }
     
     

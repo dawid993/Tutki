@@ -1,53 +1,27 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>INDEX</title>
-    </h:head>
-    <h:body>
-        <ui:composition template="./Dekorator.xhtml">
-
-            <ui:define name="content">
-               
-            <style type="text/css">
-   
-                .outputLabel{
-                    background: url('./resources/images/blackBg/black10.png');     
-                    width: 40vh; 
-                    height: 25px;      
-                    display: block; 
-                    border-radius:2px; 
-                    text-align: center; 
-                    padding-top: 5px; 
-                    font-size: 14px;
-                    border: solid 1px #599bb3;
-                }
-  
-            </style>                
-                
-                
-            <h:form>
-
-                    <br/>
-                    <div align="center"> 
-                        <h1><p:outputLabel value="STRONA GŁOWNA" style="color: black; text-shadow: 2px 2px 5px #777777;" /></h1><br/><br/>
-                    </div>  
-                    <div style="padding-left: 150px" >
-           
+<ui:composition template="./Dekorator.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+      
+    
+    
+    <ui:define name="content">                                          
+                <div align="center">  
+                    STRONA GŁOWNA <br/> 
                     
-                    </div>
-                    
-                    
-               
-                
-            </h:form>
-                
-            </ui:define>
+                    <h:form style="color:white">  
+                        <br/>  <br/>  <br/> 
+                        <h1>Witaj Na stronie Tutoriale.pl</h1>
+                        
+ <br/>  <br/>  <br/> 
+ 
+                    </h:form>
+                </div>   
+    </ui:define>
+    
+    
+    
+    
+</ui:composition>
 
-        </ui:composition>
-    </h:body>
-</html>

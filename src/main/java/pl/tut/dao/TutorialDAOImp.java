@@ -3,11 +3,14 @@ package pl.tut.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
+
 import pl.tut.hibernateconf.HibernateUtill;
 import pl.tut.model.Tutorial;
-import pl.tut.model.userClass;
+import pl.tut.model.TutorialPOJO;
 
-public class TutorialDAOImp {
+@Repository
+public class TutorialDAOImp implements TutorialDAO{
 
 	private SessionFactory sessionFactory;
 
@@ -15,7 +18,7 @@ public class TutorialDAOImp {
 		sessionFactory = HibernateUtill.getSessionFactory();
 	}
 
-	public void save(Tutorial tutorial) {
+	public void save(TutorialPOJO tutorial) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.getTransaction();
 

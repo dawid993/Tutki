@@ -6,8 +6,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import pl.tut.model.Lesson;
-import pl.tut.model.Tutorial;
-import pl.tut.model.userClass;
+import pl.tut.model.TutorialPOJO;
+import pl.tut.model.UserPOJO;
 
 public class HibernateUtill {
 
@@ -19,8 +19,8 @@ public class HibernateUtill {
             if (sessionFactory == null) {
                 Configuration configuration = new Configuration().configure(HibernateUtill.class.getResource("hibernate.conf.xml"));
                 configuration.addAnnotatedClass(Lesson.class);
-                configuration.addAnnotatedClass(Tutorial.class);
-                configuration.addAnnotatedClass(userClass.class);
+                configuration.addAnnotatedClass(TutorialPOJO.class);
+                configuration.addAnnotatedClass(UserPOJO.class);
                 //
                 
                 
